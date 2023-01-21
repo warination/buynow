@@ -1,0 +1,243 @@
+body{
+    margin: 0;
+    font-family: 'Poppins','Playfair Display';
+}
+
+.overlay{
+    position: absolute;
+    background: white;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    animation: reveal 1s ease-in forwards;
+    transform-origin: bottom;
+}
+
+@keyframes reveal{
+    from{
+        transform: scaleY(1);
+    }
+     to {
+        transform: scaleY(0);
+     }
+}
+
+.wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav{
+    margin: 40px;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 41px;
+    margin: 0;
+}
+
+nav ul li a{
+    position: relative;
+    text-decoration: none;
+    color: black;
+    transition: 0.5s;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+nav ul li a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 50%;
+    height: 3px;
+    background: grey;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .3s;
+}
+
+nav ul li a:hover{
+    color: #b30000;
+}
+
+nav ul li a:hover::after{
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+/* main content */
+
+main{
+    display: flex;
+    gap: 80px;
+    margin-top: 110px;
+    /* animation: growIn 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transform: scale(1); */
+}
+
+/* @keyframes growIn{
+    to{
+        transform: scale(1.1);
+    }
+} */
+
+.left-col{
+    width: 45%;
+}
+
+div h1{
+    font-size: 40px;
+    font-family: 'Playfair Display';
+    font-weight: 700;
+    margin: 0;
+}
+
+.subhead{
+    font-size: 18px;
+}
+
+.cta-btns{
+    display: flex;
+    gap: 20px;
+}
+
+.primary-cta{
+    background-color: #f1e2d1;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 5px;
+    color: black;
+}
+
+
+.primary-cta:hover{
+    background-color: #e2d1bd;
+}
+.secondry-cta{
+    font-size: 18px;
+    padding: 5px;
+    color: black;
+    text-decoration: none;
+}
+
+.secondry-cta:hover{
+    text-decoration: underline;
+}
+
+.secondry-cta svg{
+    transition: transform .3s;
+
+}
+
+.secondry-cta:hover svg{
+    transform: translateX(10px);
+}
+.news{
+    display: flex;
+    gap: 30px;
+    padding: 40px;
+    border: 1px solid black;
+    border-radius: 12px;
+    position: relative;
+    margin-top: 40px;
+}
+
+.news::before{
+    position: absolute;
+    content: "";
+    background: url(../images/confetti.svg);
+    width: 100px;
+    height: 100px;
+    top: -20px;
+    left: -20px;
+    z-index: 2;
+}
+
+.employee{
+    font-size: 3.3rem;
+    margin: 0;
+    font-weight: 200;
+}
+
+/* right column main */
+
+.right-col{
+    width: 49%;
+    display: grid;
+    gap: 23px;
+    grid-template-columns: repeat(2,auto);
+    grid-template-areas: 
+    "left ."
+    "left .";
+}
+
+.card{
+    border-radius: 8px;
+    padding: 11px;
+    display: flex;
+    align-items: flex-end;
+    background-size: 130%;
+    transition: background-size 800ms;
+    
+}
+
+.card:hover{
+    background-size: 150%;
+}
+
+.card1{
+    grid-area: left;
+    background-image: url(../images/clothing1.jpg);
+}
+
+
+.card2{
+    background-image: url(../images/clothing2.jpg);
+
+}
+
+
+.card3{
+    background-image: url(../images/clothing3.jpg);
+
+}
+
+.card-details{
+    background: white;
+    opacity: 0.8;
+    border-radius: 6px;
+    padding: 8px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 800ms;
+}
+
+
+.card:hover .card-details{
+    transform: translateY(-10px);
+}
+.prdouct-title{
+    text-decoration: none;
+    color: rgb(10, 107, 23);
+    font-weight: bold;
+}
+
+
+.product-price{
+    font-weight: bold;
+    color: black;
+}
